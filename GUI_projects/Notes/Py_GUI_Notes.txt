@@ -1,0 +1,395 @@
+Python GUI Notes:
+
+A) Tkinter		https://wiki.python.org/moin/TkInter
+			Tkinter is Python's de-facto standard GUI (Graphical User Interface) package. 
+			It is a thin object-oriented layer on top of Tcl/Tk. 
+			http://tkinter.unpythonic.net/wiki/
+			
+B) Introduction:  http://www.pythonware.com/library/tkinter/introduction/
+
+C) Tutorial	https://www.tutorialspoint.com/python/python_gui_programming.htm
+	- supplement:  http://www.tkdocs.com/tutorial/index.html
+	
+Lessons:
+
+1.  Creating a GUI application using Tkinter is an easy task. All you need to do is perform the following steps −
+	Import the Tkinter module.
+	- Create the GUI application main window.
+	- Add one or more of the above-mentioned widgets to the GUI application.
+	- Enter the main event loop to take action against each event triggered by the user.
+
+	>>> import tkinter
+	>>> top = tkinter.tk()
+	>>> top.mainloop()
+	
+	produces a window
+
+2.  Tkinter Widgets
+	Tkinter provides various controls, such as buttons, labels and text boxes used in a GUI application. 
+	These controls are commonly called widgets.
+	There are currently 15 types of widgets in Tkinter. We present these widgets as well as a brief description in the following table −
+
+	Operator		Description
+	---------------------------------------------------------------------------------------------------------------------------
+	Button			The Button widget is used to display buttons in your application.
+	Canvas			The Canvas widget is used to draw shapes, such as lines, ovals, polygons and rectangles, in your application.
+	Checkbutton		The Checkbutton widget is used to display a number of options as checkboxes. 
+					The user can select multiple options at a time.
+	Entry			The Entry widget is used to display a single-line text field for accepting values from a user.
+	Frame			The Frame widget is used as a container widget to organize other widgets.
+	Label			The Label widget is used to provide a single-line caption for other widgets. It can also contain images.
+	Listbox			The Listbox widget is used to provide a list of options to a user.
+	Menubutton		The Menubutton widget is used to display menus in your application.
+	Menu			The Menu widget is used to provide various commands to a user. These commands are contained inside Menubutton.
+	Message			The Message widget is used to display multiline text fields for accepting values from a user.
+	Radiobutton		The Radiobutton widget is used to display a number of options as radio buttons. 
+					The user can select only one option at a time.
+	Scale			The Scale widget is used to provide a slider widget.
+	Scrollbar		The Scrollbar widget is used to add scrolling capability to various widgets, such as list boxes.
+	Text			The Text widget is used to display text in multiple lines.
+	Toplevel		The Toplevel widget is used to provide a separate window container.
+	Spinbox			The Spinbox widget is a variant of the standard Tkinter Entry widget, 
+					which can be used to select from a fixed number of values.
+	PanedWindow		A PanedWindow is a container widget that may contain any number of panes, arranged horizontally or vertically.
+	LabelFrame		A labelframe is a simple container widget. Its primary purpose is to act as a spacer or container for 
+					complex window layouts.
+	tkMessageBox	This module is used to display message boxes in your applications.
+	---------------------------------------------------------------------------------------------------------------------------
+
+3.  Widget attributes
+	Standard attributes
+		Let us take a look at how some of their common attributes.such as sizes, colors and fonts are specified.
+
+	1)Dimensions		2)Colors		3)Fonts		4)Anchors
+	5)Relief styles		6)Bitmaps		7)Cursors
+	
+	---------------------------------------------------------------------------------------------------------------------------
+	1) Python Tkinter Dimensions 
+		Various lengths, widths, and other dimensions of widgets can be described in many different units.
+		If you set a dimension to an integer, it is assumed to be in pixels.
+
+	specify units by setting a dimension to a string containing a number followed by.
+	Character	Description
+	c			Centimeters
+	i			Inches
+	m			Millimeters
+	p			Printer's points (about 1/72")
+
+	Length options
+	Tkinter expresses a length as an integer number of pixels. 
+	Here is the list of common length options
+	__________________________________________________________
+	borderwidth:	 		Width of the border which gives a three-dimensional look to the widget.
+	highlightthickness: 	Width of the highlight rectangle when the widget has focus .
+	padX padY: 				Extra space the widget requests from its layout manager beyond the minimum the widget needs 
+							to display its contents in the x and y directions.
+	selectborderwidth: 		Width of the three-dimentional border around selected items of the widget.
+	wraplength: 			Maximum line length for widgets that perform word wrapping.
+	height: 				Desired height of the widget; must be greater than or equal to 1.
+	underline: 				Index of the character to underline in the widget's text 
+							(0 is the first character, 1 the second one, and so on).
+	width: 					Desired width of the widget.
+	---------------------------------------------------------------------------------------------------------------------------
+	2) Python Tkinter Colors
+		Tkinter represents colors with strings. 
+		There are two general ways to specify colors in Tkinter −
+			a. 	You can use a string specifying the proportion of red, green and blue in hexadecimal digits. 
+				For example, "#fff" is white, "#000000" is black, "#000fff000" is pure green, and "#00ffff" is pure cyan (green plus blue).
+				
+			b.	You can also use any locally defined standard color name. 
+				The colors "white", "black", "red", "green", "blue", "cyan", "yellow", and "magenta" will always be available.
+
+		Color options
+		The common color options are −
+		__________________________________________________________
+		activebackground: 		Background color for the widget when the widget is active.
+		activeforeground: 		Foreground color for the widget when the widget is active.
+		background: 			Background color for the widget. This can also be represented as bg.
+		disabledforeground: 	Foreground color for the widget when the widget is disabled.
+		foreground: 			Foreground color for the widget. This can also be represented as fg.
+		highlightbackground: 	Background color of the highlight region when the widget has focus.
+		highlightcolor: 		Foreground color of the highlight region when the widget has focus.
+		selectbackground: 		Background color for the selected items of the widget.
+		selectforeground: 		Foreground color for the selected items of the widget.
+	---------------------------------------------------------------------------------------------------------------------------		
+	3) Python Tkinter Fonts
+		There may be up to three ways to specify type style.
+		a) Simple Tuple Fonts
+			As a tuple whose first element is the font family, followed by a size in points, optionally 
+			followed by a string containing one or more of the style modifiers bold, italic, underline and overstrike.
+		Example 	("Helvetica", "16") for a 16-point Helvetica regular.
+					("Times", "24", "bold italic") for a 24-point Times bold italic.
+
+		b) Font object Fonts
+			You can create a "font object" by importing the tkFont module and using its Font class constructor −
+			import tkFont
+			font = tkFont.Font ( option, ... )
+			
+			Here is the list of options:
+				family: 		The font family name as a string.
+				size: 			The font height as an integer in points. To get a font n pixels high, use -n.
+				weight: 		"bold" for boldface, "normal" for regular weight.
+				slant: 			"italic" for italic, "roman" for unslanted.
+				underline:	 	1 for underlined text, 0 for normal.
+				overstrike: 	1 for overstruck text, 0 for normal.
+
+			Example
+					helv36 = tkFont.Font(family="Helvetica",size=36,weight="bold")
+
+		c) X Window Fonts
+			If you are running under the X Window System, you can use any of the X font names.
+			For example, the font named "-*-lucidatypewriter-medium-r-*-*-*-140-*-*-*-*-*-*" is the author's 
+			favorite fixed-width font for onscreen use. Use the xfontsel program to help you select pleasing fonts.
+	---------------------------------------------------------------------------------------------------------------------------					
+	4) Python Tkinter Anchors
+		Anchors are used to define where text is positioned relative to a reference point.
+	
+		Here is list of possible constants, which can be used for Anchor attribute.
+		Example
+		The anchor constants are shown in this diagram −
+         ___________________
+		| NW	N		 NE |
+		|					|
+		| W	  CENTER      E |
+		|					|
+		| SW	S		 SE |
+         ___________________
+		
+		For example, if you use CENTER as a text anchor, the text will be centered horizontally and vertically around the reference point.
+		Anchor NW will position the text so that the reference point coincides with the northwest (top left) corner of the box containing 
+		the text.
+		Anchor W will center the text vertically around the reference point, with the left edge of the text box passing through that point, 
+		and so on.
+		If you create a small widget inside a large frame and use the anchor=SE option, the widget will be placed in the bottom right corner
+		of the frame. If you used anchor=N instead, the widget would be centered along the top edge.
+	---------------------------------------------------------------------------------------------------------------------------					
+	5) Python Tkinter Relief styles
+		The relief style of a widget refers to certain simulated 3-D effects around the outside of the widget. 
+		Here is a screenshot of a row of buttons exhibiting all the possible relief styles −
+
+		A list of possible constants which can be used for relief attribute.
+		FLAT
+		RAISED
+		SUNKEN
+		GROOVE
+		RIDGE
+
+	Example
+	from Tkinter import *
+	import Tkinter
+
+	top = Tkinter.Tk()
+
+	B1 = Tkinter.Button(top, text ="FLAT", relief=FLAT )
+	B2 = Tkinter.Button(top, text ="RAISED", relief=RAISED )
+	B3 = Tkinter.Button(top, text ="SUNKEN", relief=SUNKEN )
+	B4 = Tkinter.Button(top, text ="GROOVE", relief=GROOVE )
+	B5 = Tkinter.Button(top, text ="RIDGE", relief=RIDGE )
+
+	B1.pack()
+	B2.pack()
+	B3.pack()
+	B4.pack()
+	B5.pack()
+	top.mainloop()
+	---------------------------------------------------------------------------------------------------------------------------					
+	6) Python Tkinter Bitmaps
+		This attribute to displays a bitmap. There are following type of bitmaps available −
+		"error"
+		"gray75"
+		"gray50"
+		"gray25"
+		"gray12"
+		"hourglass"
+		"info"
+		"questhead"
+		"question"
+		"warning"
+
+	Example
+	from tkinter import *
+	import tkinter
+
+	top = tkinter.Tk()
+	B1 = tkinter.Button(top, text ="error", relief=RAISED,\
+  	                     bitmap="error")
+  	B2 = tkinter.Button(top, text ="hourglass", relief=RAISED,\
+                         bitmap="hourglass")
+	B3 = tkinter.Button(top, text ="info", relief=RAISED,\
+                         bitmap="info")
+	B4 = tkinter.Button(top, text ="question", relief=RAISED,\
+                         bitmap="question")
+	B5 = tkinter.Button(top, text ="warning", relief=RAISED,\
+                         bitmap="warning")
+	B1.pack()
+	B2.pack()
+	B3.pack()
+	B4.pack()
+	B5.pack()
+	top.mainloop()
+	---------------------------------------------------------------------------------------------------------------------------					
+	7) Python Tkinter Cursors
+		Python Tkinter supports quite a number of different mouse cursors available. The exact graphic may vary according to your operating system.
+		Here is the list of interesting ones −
+		"arrow"
+		"circle"
+		"clock"
+		"cross"
+		"dotbox"
+		"exchange"
+		"fleur"
+		"heart"
+		"heart"
+		"man"
+		"mouse"
+		"pirate"
+		"plus"
+		"shuttle"
+		"sizing"
+		"spider"
+		"spraycan"
+		"star"
+		"target"
+		"tcross"
+		"trek"
+		"watch"
+
+		Example
+		Try the following example by moving cursor on different buttons −
+
+		from Tkinter import *	
+		import Tkinter
+		top = Tkinter.Tk()		
+		B1 = Tkinter.Button(top, text ="circle", relief=RAISED,\
+                         cursor="circle")
+		B2 = Tkinter.Button(top, text ="plus", relief=RAISED,\
+                         cursor="plus")
+                                              
+4.	Geometry Management
+	All Tkinter widgets have access to specific geometry management methods, which have the purpose of 
+	organizing widgets throughout the parent widget area. 
+	Tkinter exposes the following geometry manager classes: 
+		- pack 
+		- grid
+		- place
+
+	a. pack() Method 
+		This geometry manager organizes widgets in blocks before placing them in the parent widget.
+
+	b. grid() Method 
+		This geometry manager organizes widgets in a table-like structure in the parent widget.
+
+	c. place() Method
+		This geometry manager organizes widgets by placing them in a specific position in the parent widget.
+
+	Let us study the geometry management methods briefly −
+		B1.pack()
+		B2.pack()
+		top.mainloop()
+	---------------------------------------------------------------------------------------------------------------------------							
+	1) Python Tkinter pack() Method
+		This geometry manager organizes widgets in blocks before placing them in the parent widget.
+
+		Syntax
+		widget.pack( pack_options )
+		
+	a) the list of possible options
+		expand: 	When set to true, widget expands to fill any space not otherwise used in widget's parent.
+		fill: 		Determines whether widget fills any extra space allocated to it by the packer, or keeps 
+					its own minimal dimensions: NONE (default), X (fill only horizontally), Y (fill only 
+					vertically), or BOTH (fill both horizontally and vertically).
+		side: 		Determines which side of the parent widget packs against: 
+					TOP (default)
+					BOTTOM
+					LEFT
+					RIGHT
+
+		Example
+
+		from Tkinter import *
+		root = Tk()
+		frame = Frame(root)
+		frame.pack()
+		bottomframe = Frame(root)
+		bottomframe.pack( side = BOTTOM )
+		redbutton = Button(frame, text="Red", fg="red")
+		redbutton.pack( side = LEFT)
+		greenbutton = Button(frame, text="Brown", fg="brown")
+		greenbutton.pack( side = LEFT )
+		bluebutton = Button(frame, text="Blue", fg="blue")
+		bluebutton.pack( side = LEFT )
+		blackbutton = Button(bottomframe, text="Black", fg="black")
+		blackbutton.pack( side = BOTTOM)
+
+		root.mainloop()
+		
+	---------------------------------------------------------------------------------------------------------------------------									
+	2) Python Tkinter grid() Method
+		This geometry manager organizes widgets in a table-like structure in the parent widget.
+		Syntax
+		widget.grid( grid_options )
+	
+		Here is the list of possible options −
+		column: 		The column to put widget in; default 0 (leftmost column).
+		columnspan: 	How many columns widgetoccupies; default 1.
+		ipadx, ipady:	How many pixels to pad widget, horizontally and vertically, inside widget's borders.
+		padx, pady: 	How many pixels to pad widget, horizontally and vertically, outside v's borders.
+		row: 			The row to put widget in; default the first row that is still empty.
+		rowspan: 		How many rowswidget occupies; default 1.
+		sticky: 		What to do if the cell is larger than widget. By default, with sticky='', widget is centered in its cell. sticky may be the string concatenation of zero or more of N, E, S, W, NE, NW, SE, and SW, compass directions indicating the sides and corners of the cell to which widget sticks.
+
+		Example
+
+		import Tkinter
+		root = Tkinter.Tk(  )
+		for r in range(3):
+    		for c in range(4):
+        		Tkinter.Label(root, text='R%s/C%s'%(r,c),
+            	borderwidth=1 ).grid(row=r,column=c)
+		root.mainloop(  )
+	
+	---------------------------------------------------------------------------------------------------------------------------										
+	3) Python Tkinter place() Method
+		This geometry manager organizes widgets by placing them in a specific position in the parent widget.
+
+		Syntax
+		widget.place( place_options )
+
+		a) list of possible options
+		
+		anchor: 			The exact spot of widget other options refer to: may be N, E, S, W, NE, NW, SE, or SW, 
+							compass directions indicating the corners and sides of widget; default is NW 
+							(the upper left corner of widget)
+
+		bordermode: 		INSIDE (the default) to indicate that other options refer to the parent's inside 
+							(ignoring the parent's border); OUTSIDE otherwise.
+
+		height, width: 		Height and width in pixels.
+
+		relheight,relwidth: Height and width as a float between 0.0 and 1.0, as a fraction of the height and width of the parent widget.
+
+		relx,rely: 			Horizontal and vertical offset as a float between 0.0 and 1.0, as a fraction of the 
+							height and width of the parent widget.
+
+		x, y: 				Horizontal and vertical offset in pixels.
+
+		Example
+
+		from Tkinter import *
+		import tkMessageBox
+		import Tkinter
+
+		top = Tkinter.Tk()
+
+		def helloCallBack():
+   			tkMessageBox.showinfo( "Hello Python", "Hello World")
+
+		B = Tkinter.Button(top, text ="Hello", command = helloCallBack)
+
+		B.pack()
+		B.place(bordermode=OUTSIDE, height=100, width=100)
+		top.mainloop()
+	
+	
+	
+	
