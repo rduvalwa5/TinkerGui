@@ -18,22 +18,23 @@ class MyDialog(Dialog):
     def apply(self):
         self.result = "OK"
 
-        self.d_button = Button(self, text="Dialog...", command=self.create_dialog)
-        self.d_button.pack({"side": "left"})
 
 class MyColors(Dialog):
     def body(self, master):
         self.result = None
-        for r in range(5):
-            for c in range(5):
-                b = Button(master, text="Row {0} Col {1}".format(r, c))
-                b.grid(row=r, column=c)
+#        for r in range(5):
+#            for c in range(5):
+        a = Button(master, text="Button Red",fg = "black", bg = "red")
+        b = Button(master, text="Button White",fg = "black", bg = "white")
+        c = Button(master, text="Button Blue",fg = "black", bg = "blue")
+        a.grid(row=1, column=1)
+        b.grid(row=2, column=1)
+        c.grid(row=3, column=1)
+        
         print("Colors created")
 
     def apply(self):
         self.result = "OK"
-        self.c_button = Button(self, text="Colors...", command=self.create_dialog)
-        self.c_button.pack({"side": "left"})
         
 class Application(Frame):
     def create_dialog(self):
@@ -46,8 +47,8 @@ class Application(Frame):
 
     def create_widgets(self):
         
-        self.c_button = Button(self, text="Colors", fg = "black", bg = "green", command=self.create_Colors())
-        self.c_button.pack({"side": "left"})
+        self.x_button = Button(self, text="Colors", fg = "black", bg = "green", command=self.create_Colors)
+        self.x_button.pack({"side": "right"})
         
         self.d_button = Button(self, text="Dialog...", command=self.create_dialog)
         self.d_button.pack({"side": "left"})
