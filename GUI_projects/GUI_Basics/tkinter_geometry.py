@@ -4,12 +4,12 @@ root = Tk()
 frame = Frame(root)
 frame.pack()
 
-bottomframe = Frame(root)
+bottomframe = Frame(root,bg='red')
 topframe = Frame(root)
 bottomframe.pack( side = BOTTOM )
 topframe.pack(side = TOP)
 
-topbutton = Button(topframe, text="Top", fg="red")
+topbutton = Button(topframe, text="Top", fg="black",bg="red")
 topbutton.pack(side = TOP)
 
 redbutton = Button(frame, text="Red", fg="red")
