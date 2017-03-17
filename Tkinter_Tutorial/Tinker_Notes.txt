@@ -275,3 +275,162 @@ Python Tkinter Checkbutton
 	invoke()			You can call this method to get the same actions that would occur if the user clicked on the checkbutton to change its state.
 	select()			Sets (turns on) the checkbutton.
 	toggle()			Clears the checkbutton if set, sets it if cleared.
+	
+	
+*********************************************************************************************************
+	
+Python Tkinter Entry
+	The Entry widget is used to accept single-line text strings from a user.
+	- If you want to display multiple lines of text that can be edited, then you should use the 
+	  Text widget.
+	- If you want to display one or more lines of text that cannot be modified by the user, 
+	  then you should use the Label widget.
+
+	Syntax
+	Here is the simple syntax to create this widget −
+
+	w = Entry( master, option, ... )
+
+	Parameters:
+	master: This represents the parent window.
+
+	options: 
+		- Here is the list of most commonly used options for this widget. 
+		- These options can be used as key-value pairs separated by commas.
+
+	Option				Description
+	bg					The normal background color displayed behind the label and indicator.
+	bd					The size of the border around the indicator. Default is 2 pixels.
+	command				A procedure to be called every time the user changes the state of this checkbutton.
+	cursor				If you set this option to a cursor name (arrow, dot etc.), the mouse cursor will 
+						change to that pattern when it is over the checkbutton.
+	font				The font used for the text.
+	exportselection		By default, if you select text within an Entry widget, it is automatically exported to the clipboard. 
+						To avoid this exportation, use exportselection=0.
+	fg					The color used to render the text.
+	highlightcolor		The color of the focus highlight when the checkbutton has the focus.
+	justify				If the text contains multiple lines, this option controls how the text is justified:
+						CENTER, LEFT, or RIGHT.
+	relief				With the default value, relief=FLAT, the checkbutton does not stand out from its background. You may 
+						set this option to any of the other styles
+	selectbackground	The background color to use displaying selected text.
+	selectborderwidth	The width of the border to use around selected text. The default is one pixel.
+	selectforeground	The foreground (text) color of selected text.
+	show				Normally, the characters that the user types appear in the entry. To make a .password. entry that 
+						echoes each character as an asterisk, set show="*".
+	state				The default is state=NORMAL, but you can use state=DISABLED to gray out the control and make it unresponsive. 
+						If the cursor is currently over the checkbutton, the state is ACTIVE.
+	textvariable		In order to be able to retrieve the current text from your entry widget, you must set this option to an 
+						instance of the StringVar class.
+	width				The default width of a checkbutton is determined by the size of the displayed image or text. You can set this
+						option to a number of characters and the checkbutton will always have room for that many characters.
+	xscrollcommand		If you expect that users will often enter more text than the onscreen size of the widget, you can link your 
+						entry widget to a scrollbar.
+
+	Methods
+		Following are commonly used methods for this widget −
+
+	Medthod						Description
+	delete (first,last=None)	Deletes characters from the widget, starting with the one at index first, up to but not including 
+								the character at position last. If the second argument is omitted, only the single character at 
+								position first is deleted.
+	get()						Returns the entry's current text as a string.
+	icursor (index)				Set the insertion cursor just before the character at the given index.
+	index (index)				Shift the contents of the entry so that the character at the given index is the leftmost visible 
+								character. Has no effect if the text fits entirely within the entry.
+	insert (index,s)			Inserts string s before the character at the given index.
+	select_adjust (index)		This method is used to make sure that the selection includes the character at the specified index.
+	select_clear()				Clears the selection. If there isn't currently a selection, has no effect.
+	select_from (index)			Sets the ANCHOR index position to the character selected by index, and selects that character.
+	select_present()			If there is a selection, returns true, else returns false.
+	select_range (start,end)	Sets the selection under program control. Selects the text starting at the start index, up to but not 
+								including the character at the end index. The start position must be before the end position.
+	select_to (index)			Selects all the text from the ANCHOR position up to but not including the character at the given index.
+	xview (index)				This method is useful in linking the Entry widget to a horizontal scrollbar.
+	xview_scroll(number,what)	Used to scroll the entry horizontally. The what argument must be either UNITS, to scroll by character 
+								widths, or PAGES, to scroll by chunks the size of the entry widget. The number is positive to scroll 
+								left to right, negative to scroll right to left.	
+								
+*********************************************************************************************************
+
+Python Tkinter Frame
+	The Frame widget is very important for the process of grouping and organizing other widgets in a somehow
+	friendly way. It works like a container, which is responsible for arranging the position of other widgets.
+	- It uses rectangular areas in the screen to organize the layout and to provide padding of these widgets. 
+	  A frame can also be used as a foundation class to implement complex widgets.
+
+	Syntax
+		Here is the simple syntax to create this widget −
+
+ 		w = Frame ( master, option, ... )
+
+	Parameters
+		master: This represents the parent window.
+
+	options: 
+		Here is the list of most commonly used options for this widget. 
+		These options can be used as key-value pairs separated by commas.
+
+	Option					Description
+	bg						The normal background color displayed behind the label and indicator.
+	bd						The size of the border around the indicator. Default is 2 pixels.
+	cursor					If you set this option to a cursor name (arrow, dot etc.), the mouse cursor will change to that
+							pattern when it is over the checkbutton.
+	height					The vertical dimension of the new frame.
+	highlightbackground		Color of the focus highlight when the frame does not have focus.
+	highlightcolor			Color shown in the focus highlight when the frame has the focus.
+	highlightthickness		Thickness of the focus highlight.
+	relief					With the default value, relief=FLAT, the checkbutton does not stand out from its background. 
+							You may set this option to any of the other styles
+	width					The default width of a checkbutton is determined by the size of the displayed image or text. 
+							You can set this option to a number of characters and the checkbutton will always have room for 
+							that many characters.
+
+*********************************************************************************************************
+
+Python Tkinter Label
+	This widget implements a display box where you can place text or images. 
+	The text displayed by this widget can be updated at any time you want.
+	- It is also possible to underline part of the text (like to identify a keyboard shortcut) 
+	  and span the text across multiple lines.
+
+	Syntax
+	Here is the simple syntax to create this widget −
+
+	w = Label ( master, option, ... )
+
+	Parameters:
+		master: This represents the parent window.
+
+	options: 
+		Here is the list of most commonly used options for this widget. 
+		These options can be used as key-value pairs separated by commas.
+
+	Option			Description
+	anchor			This options controls where the text is positioned if the widget has more space than the text needs. 
+					The default is anchor=CENTER, which centers the text in the available space.
+	bg				The normal background color displayed behind the label and indicator.
+	bitmap			Set this option equal to a bitmap or image object and the label will display that graphic.
+	bd				The size of the border around the indicator. Default is 2 pixels.
+	cursor			If you set this option to a cursor name (arrow, dot etc.), the mouse cursor will change to that pattern
+					when it is over the checkbutton.
+	font			If you are displaying text in this label (with the text or textvariable option, the font option specifies
+					in what font that text will be displayed.
+	fg				If you are displaying text or a bitmap in this label, this option specifies the color of the text. 
+					If you are displaying a bitmap, this is the color that will appear at the position of the 1-bits in the bitmap.
+	height			The vertical dimension of the new frame.
+	image			To display a static image in the label widget, set this option to an image object.
+	justify			Specifies how multiple lines of text will be aligned with respect to each other: LEFT for flush left, CENTER for centered (the default), or RIGHT for right-justified.
+	padx			Extra space added to the left and right of the text within the widget. Default is 1.
+	pady			Extra space added above and below the text within the widget. Default is 1.
+	relief			Specifies the appearance of a decorative border around the label. The default is FLAT; for other values.
+	text			To display one or more lines of text in a label widget, set this option to a string containing the text. 
+					Internal newlines ("\n") will force a line break.
+	textvariable	To slave the text displayed in a label widget to a control variable of class StringVar, set this option to that 
+					variable.
+	underline		You can display an underline (_) below the nth letter of the text, counting from 0, by setting this option to n. 
+					The default is underline=-1, which means no underlining.
+	width			Width of the label in characters (not pixels!). If this option is not set, the label will be sized to fit its 
+					contents.
+	wraplength		You can limit the number of characters in each line by setting this option to the desired number. The default 
+					value, 0, means that lines will be broken only at newlines.
