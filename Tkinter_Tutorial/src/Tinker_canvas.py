@@ -1,4 +1,5 @@
 '''
+
 The Canvas widget is used to draw shapes, such as lines, 
 ovals, polygons and rectangles, in your application.
 The Canvas is a rectangular area intended for drawing pictures or other complex layouts. 

@@ -1,4 +1,5 @@
 '''
+
 The Entry widget is used to display a single-line text field for accepting values from a user.
 https://www.tutorialspoint.com/python/tk_entry.htm
 '''

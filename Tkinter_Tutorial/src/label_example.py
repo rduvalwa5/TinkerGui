@@ -1,4 +1,5 @@
 '''
+
 The Label widget is used to provide a single-line caption for other widgets. It can also contain images.
 '''
 

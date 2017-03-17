@@ -1,4 +1,5 @@
 '''
+
 The Checkbutton widget is used to display a number of options as checkboxes. The user can select multiple options 
 at a time.
 https://www.tutorialspoint.com/python/tk_checkbutton.htm
