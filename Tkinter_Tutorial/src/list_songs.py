@@ -10,8 +10,9 @@ from tkinter import *
 
 top = Tk()
 
-songs = [('Song l','Album 1'),('Song 2','Album 2'),('Song 3','Album 3')]
-
+songs = [('Song l','Album 1'),('Song 2','Album 2'),('Song 3','Album 3'),('Song l','Album 1'),('Song 2','Album 2'),('Song 3','Album 3'),('Song l','Album 1'),('Song 2','Album 2'),('Song 3','Album 3')]
+scrollbar = Scrollbar(top)
+scrollbar.pack( side = RIGHT, fill=Y )
 
 Lb1 = Listbox(top)
 num = 0
