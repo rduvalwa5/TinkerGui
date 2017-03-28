@@ -13,7 +13,7 @@ class firstn(object):
 
     def next(self):
         if self.num < self.n:
-            cur, self.num = self.num, self.num+1
+            cur, self.num = self.num, self.num + 1
             return cur
         else:
             raise StopIteration()

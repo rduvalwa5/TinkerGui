@@ -13,11 +13,11 @@ class test_pyArchive(unittest.TestCase):
 
     def setUp(self):
         self.origdir = os.getcwd()
-        self.current_directory = (tempfile.mkdtemp("testdir") )
+        self.current_directory = (tempfile.mkdtemp("testdir"))
         os.chdir(self.current_directory)  
         os.mkdir("testDirectory")
         global fileNames
-        fileNames = ['testA','testB','testc']    
+        fileNames = ['testA', 'testB', 'testc']    
         for fn in fileNames:
                 f = open(fn, "w")
                 f.close()
@@ -38,7 +38,7 @@ class test_pyArchive(unittest.TestCase):
     def test_ArchiveDoesNotContainDirectory(self):
         test_dir = os.path.split(self.current_directory)[1]
         observed = pyArchive.pyArchive(self.current_directory)
-        self.assertFalse(os.path.join(test_dir + "/","testDirectory") in observed, "Failed a directory is in the archive")
+        self.assertFalse(os.path.join(test_dir + "/", "testDirectory") in observed, "Failed a directory is in the archive")
 
     def tearDown(self):
         os.chdir(self.origdir)

@@ -11,12 +11,12 @@ def sort_by_value(dict_in):
     def print_length_count(dict):
             print(" Length Count")
             for length in sorted(dict.keys()):
-                print(" {0} {1}".format(length ,dict[length]))
+                print(" {0} {1}".format(length , dict[length]))
     
     def sort_by_count(dict):
         for length in dict.keys():
             values.append(dict[length])
-        sorted_values = sorted(values,reverse = True)    
+        sorted_values = sorted(values, reverse=True)    
         print(sorted_values)
         return(sorted_values)
 

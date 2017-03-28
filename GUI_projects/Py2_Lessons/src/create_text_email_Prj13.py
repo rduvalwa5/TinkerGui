@@ -11,7 +11,7 @@ from database import login_info
 from datetime import timedelta
 from datetime import datetime
 from random import randint
-#from email.utils import parsedate_tz, mktime_tz
+# from email.utils import parsedate_tz, mktime_tz
 
 db = mysql.connector.Connect(**login_info)
 cursor = db.cursor()
@@ -28,15 +28,15 @@ def createDailyMessage():
             msg['To'] = recipient[1]
             msg['Subject'] = "Message for the day"
             msg['From'] = 'anybody@home.com'
-            msg['message-id'] = "<" + str(randint(100000,900000)) + ">"
+            msg['message-id'] = "<" + str(randint(100000, 900000)) + ">"
             msg['Message'] = message
-            cursor.execute("INSERT INTO daily_email (messageId,msgRecipientAddress,msgFrom,msgSendDate,msgSubject,msgText) VALUES (%s,%s,%s,%s,%s,%s)",( msg['message-id'], msg['To'],msg['From'],startDate,msg['Subject'],msg['Message']))
+            cursor.execute("INSERT INTO daily_email (messageId,msgRecipientAddress,msgFrom,msgSendDate,msgSubject,msgText) VALUES (%s,%s,%s,%s,%s,%s)", (msg['message-id'], msg['To'], msg['From'], startDate, msg['Subject'], msg['Message']))
         startDate += timedelta(days=1)
         messageNumber += 1
     db.commit()
     end = datetime.now()
     diffTime = end - start
-    print("Data base Process time in microseconds ",(diffTime.microseconds))   
+    print("Data base Process time in microseconds ", (diffTime.microseconds))   
     messageNumber += 1
 
 def createDailyMail():
@@ -58,7 +58,7 @@ def createDailyMail():
         sentEmails.append(theMsg)
     end = datetime.now()
     diffTime = end - start
-    print("Send Mail Process time in microseconds ",(diffTime.microseconds))   
+    print("Send Mail Process time in microseconds ", (diffTime.microseconds))   
     return sentEmails
 
 def sendDailyMail(messages, server):
@@ -78,7 +78,7 @@ def sendDailyMail(messages, server):
             print(email)
     srv.quit()
 
-if __name__ ==  "__main__":
+if __name__ == "__main__":
         server = 'mail.oreillyschool.com'
         cursor.execute("""DROP TABLE IF EXISTS daily_email""")
         cursor.execute("""
@@ -95,7 +95,7 @@ if __name__ ==  "__main__":
         createDailyMessage()
         myMessages = createDailyMail()
         try:
-            sendDailyMail(myMessages,server)
+            sendDailyMail(myMessages, server)
         except IOError:
             print("Socket exception")
             print(IOError)

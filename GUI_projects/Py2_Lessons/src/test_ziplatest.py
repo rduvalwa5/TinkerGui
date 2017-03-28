@@ -29,7 +29,7 @@ class TestZip(unittest.TestCase):
         zf.close()
         observed = set([os.path.basename(f) for f in files_in_archive])
         expected = set(self.file_names[1:3])
-        self.assertEqual(observed,expected)
+        self.assertEqual(observed, expected)
         
     def tearDown(self):
         os.remove(self.zip_filename)

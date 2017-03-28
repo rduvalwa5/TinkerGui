@@ -3,15 +3,15 @@ import tkinter
 
 top = tkinter.Tk()
 
-B1 = tkinter.Button(top, text ="error", relief=RAISED,\
+B1 = tkinter.Button(top, text="error", relief=RAISED, \
                            bitmap="error")
-B2 = tkinter.Button(top, text ="hourglass", relief=RAISED,\
+B2 = tkinter.Button(top, text="hourglass", relief=RAISED, \
                          bitmap="hourglass")
-B3 = tkinter.Button(top, text ="info", relief=RAISED,\
+B3 = tkinter.Button(top, text="info", relief=RAISED, \
                          bitmap="info")
-B4 = tkinter.Button(top, text ="question", relief=RAISED,\
+B4 = tkinter.Button(top, text="question", relief=RAISED, \
                          bitmap="question")
-B5 = tkinter.Button(top, text ="warning", relief=RAISED,\
+B5 = tkinter.Button(top, text="warning", relief=RAISED, \
                          bitmap="warning")
 B1.pack()
 B2.pack()

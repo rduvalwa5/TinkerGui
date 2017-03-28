@@ -24,16 +24,16 @@ OPTIONAL BONUS:  Sort the report by IP address, like this:
 @author: rduvalwa2
 '''
 report = {}
-open_testFile = open('testfile.txt','r').readlines() #open and read from same expression
+open_testFile = open('testfile.txt', 'r').readlines()  # open and read from same expression
 string_trigger = "drops"
 for line in open_testFile:
     if line.find(string_trigger) > 1:
                 words = line.strip().split()
                 report[words[2]] = words[4]
-print( "Unsorted Report")
+print("Unsorted Report")
 for ip in report:
     print(ip, "drops total" , report[ip], "packets")
-print( "Sorted Report")
+print("Sorted Report")
 for ip in sorted(report):
     print(ip, "drops total" , report[ip], "packets")
 

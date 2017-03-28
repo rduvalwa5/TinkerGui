@@ -7,8 +7,8 @@ import glob
 import os
 
 def fileTypeCounter(path="."):
-    counts =   {}  
-    files = glob.glob(os.path.join(path, "*")) # get all files in path
+    counts = {}  
+    files = glob.glob(os.path.join(path, "*"))  # get all files in path
     for file in files:
         if os.path.isfile(file):
             path_ext = os.path.splitext(file)
@@ -16,7 +16,7 @@ def fileTypeCounter(path="."):
                 counts[path_ext[1]] += 1
             else:
                 counts[path_ext[1]] = 1
-    print("File Extensions in:",os.path.abspath(path))         
+    print("File Extensions in:", os.path.abspath(path))         
     for i in counts:
-        print(i,":", counts[i])
+        print(i, ":", counts[i])
     return counts

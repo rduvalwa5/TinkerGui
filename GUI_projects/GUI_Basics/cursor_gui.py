@@ -30,21 +30,21 @@ import tkinter
 
 top = tkinter.Tk()
 
-B1 = tkinter.Button(top, text ="circle", relief=RAISED,\
+B1 = tkinter.Button(top, text="circle", relief=RAISED, \
                          cursor="circle")
-B2 = tkinter.Button(top, text ="plus", relief=RAISED,\
+B2 = tkinter.Button(top, text="plus", relief=RAISED, \
                          cursor="plus")
-B3 = tkinter.Button(top, text ="man", relief=RAISED,\
+B3 = tkinter.Button(top, text="man", relief=RAISED, \
                          cursor="man")
-B4 = tkinter.Button(top, text ="pirate", relief=RAISED,\
+B4 = tkinter.Button(top, text="pirate", relief=RAISED, \
                          cursor="pirate")
-B5 = tkinter.Button(top, text ="shuttle", relief=RAISED,\
+B5 = tkinter.Button(top, text="shuttle", relief=RAISED, \
                          cursor="shuttle")
-B6 = tkinter.Button(top, text ="spider", relief=RAISED,\
+B6 = tkinter.Button(top, text="spider", relief=RAISED, \
                          cursor="spider")
-B7 = tkinter.Button(top, text ="spraycan", relief=RAISED,\
+B7 = tkinter.Button(top, text="spraycan", relief=RAISED, \
                          cursor="spraycan")
-B8 = tkinter.Button(top, text ="fleur", relief=RAISED,\
+B8 = tkinter.Button(top, text="fleur", relief=RAISED, \
                          cursor="fleur")
 
 B1.pack()

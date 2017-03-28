@@ -23,38 +23,38 @@ class test_high_score(unittest.TestCase):
         score = 12 
         expected = 12
         player = 'joe'
-        observed = high_score.high_score(player,score)
-        self.assertEqual(observed,expected)
+        observed = high_score.high_score(player, score)
+        self.assertEqual(observed, expected)
 
     def test_no_change_same(self):
         old_score = 12
         score = 12
         expected = 12 
         player = 'joe'
-        high_score.high_score(player,old_score)
-        high_score.high_score(player,score)
-        observed = high_score.high_score(player,0)
-        self.assertEqual(observed,expected)
+        high_score.high_score(player, old_score)
+        high_score.high_score(player, score)
+        observed = high_score.high_score(player, 0)
+        self.assertEqual(observed, expected)
         
     def test_change_less(self):
         old_score = 12
         score = 11
         expected = 12 
         player = 'joe'
-        high_score.high_score(player,old_score)        
-        high_score.high_score(player,score)
-        observed = high_score.high_score(player,0)
-        self.assertEqual(observed,expected)
+        high_score.high_score(player, old_score)        
+        high_score.high_score(player, score)
+        observed = high_score.high_score(player, 0)
+        self.assertEqual(observed, expected)
      
     def test_new_high_score(self):
         old_score = 12
         score = 21
         expected = 21 
         player = 'joe'
-        high_score.high_score(player,old_score)        
-        high_score.high_score(player,score)
-        observed = high_score.high_score(player,0)
-        self.assertEqual(observed,expected)
+        high_score.high_score(player, old_score)        
+        high_score.high_score(player, score)
+        observed = high_score.high_score(player, 0)
+        self.assertEqual(observed, expected)
     
     def tearDown(self):
             files = glob.glob("scores.*")

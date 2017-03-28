@@ -6,5 +6,5 @@ parrot, penguin, tiger, bear' .
 The number of elements is not fixed however.
 '''
     
-lst = ["monkey","parrot","penguin","tiger","bear"] 
+lst = ["monkey", "parrot", "penguin", "tiger", "bear"] 
 print (', '.join(lst))

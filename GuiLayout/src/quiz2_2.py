@@ -9,7 +9,7 @@ http://effbot.org/tkinterbook/grid.htm
 '''
 from tkinter import  *
 
-ALL = N+S+W+E
+ALL = N + S + W + E
 
 class Application(Frame):
     def __init__(self, master=None):
@@ -25,7 +25,7 @@ class Application(Frame):
             self.columnconfigure(c, weight=1)
             Label(self, text="{0}".format(c)).grid(row=9, column=c, sticky=ALL)
         f = Frame(self, bg="red")
-        f.grid(row=3, column=3, rowspan=3, columnspan=3, ipady=1,padx=1,sticky=N+S+W+E)
+        f.grid(row=3, column=3, rowspan=3, columnspan=3, ipady=1, padx=1, sticky=N + S + W + E)
 
                 
 root = Tk()

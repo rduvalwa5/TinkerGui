@@ -24,9 +24,9 @@ class MyColors(Dialog):
         self.result = None
 #        for r in range(5):
 #            for c in range(5):
-        a = Button(master, text="Button Red",fg = "black", bg = "red")
-        b = Button(master, text="Button White",fg = "black", bg = "white")
-        c = Button(master, text="Button Blue",fg = "black", bg = "blue")
+        a = Button(master, text="Button Red", fg="black", bg="red")
+        b = Button(master, text="Button White", fg="black", bg="white")
+        c = Button(master, text="Button Blue", fg="black", bg="blue")
         a.grid(row=1, column=1)
         b.grid(row=2, column=1)
         c.grid(row=3, column=1)
@@ -47,13 +47,13 @@ class Application(Frame):
 
     def create_widgets(self):
         
-        self.x_button = Button(self, text="Colors", fg = "black", bg = "green", command=self.create_Colors)
+        self.x_button = Button(self, text="Colors", fg="black", bg="green", command=self.create_Colors)
         self.x_button.pack({"side": "right"})
         
         self.d_button = Button(self, text="Dialog...", command=self.create_dialog)
         self.d_button.pack({"side": "left"})
 
-        self.QUIT = Button(self, text="Quit", fg="red",bg="black", command=self.quit)
+        self.QUIT = Button(self, text="Quit", fg="red", bg="black", command=self.quit)
         self.QUIT.pack({"side": "left"})
 
     def __init__(self, master=None):

@@ -30,14 +30,14 @@ again as they are (i.e. 150% wider, as shown below).  Labeling each Frame is opt
 '''
 from tkinter import *
 
-#ALL = N+S+W+E
+# ALL = N+S+W+E
  
 class Application(Frame):
     def __init__(self, master=None):
         Frame.__init__(self, master)
         self.master.rowconfigure(0, weight=1)
         self.master.columnconfigure(0, weight=1)
-        self.grid(sticky=N+S+W+E)
+        self.grid(sticky=N + S + W + E)
         for r in range(14):
             self.rowconfigure(r, weight=1)
             if r == 7:
@@ -45,15 +45,15 @@ class Application(Frame):
             else:
                 Label(self, text="".format(r)).grid(row=r, column=0)
         self.rowconfigure(5, weight=1)
-        for c in range(1,6):
+        for c in range(1, 6):
             self.columnconfigure(c, weight=1)
-            Button(self, text="Button {0}".format(c)).grid(row=14, column=c, sticky=E+W)
+            Button(self, text="Button {0}".format(c)).grid(row=14, column=c, sticky=E + W)
         frame1 = Frame(self, bg="red")
-        frame1.grid(row=0,column=1, rowspan=7, columnspan=2, sticky=N+S+W+E)
+        frame1.grid(row=0, column=1, rowspan=7, columnspan=2, sticky=N + S + W + E)
         frame2 = Frame(self, bg="blue")
-        frame2.grid(row=7, column=1, rowspan=7, columnspan=2, sticky=N+S+W+E) 
+        frame2.grid(row=7, column=1, rowspan=7, columnspan=2, sticky=N + S + W + E) 
         frame3 = Frame(self, bg="yellow")
-        frame3.grid(row=0, column=3, rowspan=14, columnspan=3, sticky=N+S+W+E)        
+        frame3.grid(row=0, column=3, rowspan=14, columnspan=3, sticky=N + S + W + E)        
 
 root = Tk()
 app = Application(master=root)                

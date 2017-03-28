@@ -8,8 +8,8 @@ Created on Feb 23, 2013
 this file provides user info for login
 @author: rduval
 '''
-USERNAME="reddog"
-PASSWORD="reddog"
+USERNAME = "reddog"
+PASSWORD = "reddog"
 
 login_info = {
 #              'host': "sql.oreillyschool.com",

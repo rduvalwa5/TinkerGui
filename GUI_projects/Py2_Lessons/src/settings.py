@@ -17,8 +17,8 @@ DY = 26
 
 NAME = ""
 EMAIL = ""
-STARTTIME = datetime.datetime(YR,MNTH,DY) # figure out how to create a time stamp
-RECIPIENTS = {("RDuval","rduvalwa5@hotmail.com"),("Randy","rduvalwa2@frontier.com"),("rduval","rduvalwag@gmail.com")}
+STARTTIME = datetime.datetime(YR, MNTH, DY)  # figure out how to create a time stamp
+RECIPIENTS = {("RDuval", "rduvalwa5@hotmail.com"), ("Randy", "rduvalwa2@frontier.com"), ("rduval", "rduvalwag@gmail.com")}
 # RECIPIENTS = {(NAME,EMAIL)}
 DAYCOUNT = 2
 

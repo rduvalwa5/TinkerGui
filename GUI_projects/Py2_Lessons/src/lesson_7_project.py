@@ -63,7 +63,7 @@ class Application(Frame):
         print(text1)
         print(text2)
         
-        if is_number(text1) == True &  is_number(text2) == True:
+        if is_number(text1) == True & is_number(text2) == True:
                 total = float(text1) + float(text2)
                 print(total)
                 self.result.config(text=total)  

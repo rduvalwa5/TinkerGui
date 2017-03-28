@@ -11,5 +11,5 @@ curs = conn.cursor()
 curs.execute("select msgText from message order by msgDate")
 for text, in curs.fetchall():
     msg = message_from_string(text)
-    print(msg['date'],msg['subject'])
+    print(msg['date'], msg['subject'])
 

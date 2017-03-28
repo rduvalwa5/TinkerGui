@@ -17,7 +17,7 @@ def store(msg):
     """ 
     message_id = msg['message-id']
 #    text = msg.as_string()
-    curs.execute("SELECT msgID FROM message WHERE msgMessageID=%s", (message_id, ))
+    curs.execute("SELECT msgID FROM message WHERE msgMessageID=%s", (message_id,))
     result = curs.fetchone()
     if result:
         return result[0]
@@ -26,13 +26,13 @@ def store(msg):
     dt = datetime.fromtimestamp(mktime_tz(parsedate_tz(date)))
     text = msg.as_string()
     curs.execute("INSERT INTO message (msgMessageID, msgDate,msgSenderName,msgSenderAddress,msgText) VALUES (%s, %s, %s,%s,%s)",
-             (message_id, dt,name,email, text))
+             (message_id, dt, name, email, text))
     conn.commit()
-    curs.execute("SELECT msgID FROM message WHERE msgMessageID=%s", (message_id, ))
+    curs.execute("SELECT msgID FROM message WHERE msgMessageID=%s", (message_id,))
     return curs.fetchone()[0]
 
 # def msgs_by_date(mindate=None, maxdate=None):
-def msgs(mindate=None,maxdate=None, namesearch=None, addsearch=None):
+def msgs(mindate=None, maxdate=None, namesearch=None, addsearch=None):
     """
     Return a list of all messages sent on or after mindate and on or before maxdate.
     If mindate is not specified, there is no lower bound on the date, and similarly
@@ -50,7 +50,7 @@ def msgs(mindate=None,maxdate=None, namesearch=None, addsearch=None):
         data.append(mindate)
     if maxdate:
         conds.append("msgdate < %s")
-        data.append(maxdate+timedelta(days=1))
+        data.append(maxdate + timedelta(days=1))
     if namesearch:
         conds.append("msgSenderName like %s")
         data.append("%" + namesearch.strip().lower() + "%s")
@@ -73,7 +73,7 @@ def msg_by_id(id):
     Return the (presumably singleton) message whose primary key is given
     or raise KeyError if no such message exists.
     """
-    curs.execute("SELECT msgID, msgText FROM message WHERE msgID=%s", (id, ))
+    curs.execute("SELECT msgID, msgText FROM message WHERE msgID=%s", (id,))
     result = curs.fetchone()
     if  not result:
         raise KeyError("Id {0} not found in store".format(id))
@@ -86,7 +86,7 @@ def msg_by_message_id(message_id):
     Return the (presumably singleton) message whose "Message-ID" is given
     or raise KeyError if no such message exists.
     """
-    curs.execute("SELECT msgID, msgText FROM message WHERE msgMessageID=%s", (message_id, ))
+    curs.execute("SELECT msgID, msgText FROM message WHERE msgMessageID=%s", (message_id,))
     result = curs.fetchone()
     if  not result:
         raise KeyError("Message-Id {0} not found in store".format(message_id))

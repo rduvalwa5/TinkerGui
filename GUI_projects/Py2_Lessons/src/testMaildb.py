@@ -27,7 +27,7 @@ CREATE TABLE message (
      msgDate DATETIME,
      msgText LONGTEXT
 )"""
-#FILESPEC = "C:/PythonData/*.eml"
+# FILESPEC = "C:/PythonData/*.eml"
 FILESPEC = "/TestEmails/*.eml"
 
 class testRealEmail_traffic(unittest.TestCase):
@@ -44,12 +44,12 @@ class testRealEmail_traffic(unittest.TestCase):
         conn.commit()
         files = glob(FILESPEC)
         print(files)
-        self.msgids = {} # Keyed by message_id
-        self.message_ids = {} # keyed by id
+        self.msgids = {}  # Keyed by message_id
+        self.message_ids = {}  # keyed by id
         self.msgdates = []
         self.rowcount = 0
         for f in files:
-            print( "File is: ", f)
+            print("File is: ", f)
             ff = open(f)
             text = ff.read()
             ff.close()
@@ -58,7 +58,7 @@ class testRealEmail_traffic(unittest.TestCase):
             self.message_ids[id] = msg['message-id']
             date = msg['date']
             self.msgdates.append(datetime.datetime.fromtimestamp(mktime_tz(parsedate_tz(date))))
-            self.rowcount += 1 # assuming no duplicated Message-IDs
+            self.rowcount += 1  # assuming no duplicated Message-IDs
 
     def test_not_empty(self):
         """
@@ -97,8 +97,8 @@ class testRealEmail_traffic(unittest.TestCase):
         maxd = max(self.msgdates)
         maxdate = datetime.date(maxd.year, maxd.month, maxd.day)
 #        self.assertEqual(self.rowcount, len(maildb.msgs_by_date(mindate=mindate, maxdate=maxdate)))
-        self.assertEqual(self.rowcount,len(maildb.msgs(mindate, maxdate)))
+        self.assertEqual(self.rowcount, len(maildb.msgs(mindate, maxdate)))
         
-if __name__  == "__main__":
+if __name__ == "__main__":
     unittest.main()
 

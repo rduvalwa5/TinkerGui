@@ -29,7 +29,7 @@ class Application(Frame):
         
         bottom_frame = Frame(self)
         bottom_frame.pack(side=TOP)
-#how to disable a button
+# how to disable a button
         self.QUIT = Button(bottom_frame, text="Quit", command=self.quit, state='disabled')
         self.QUIT.pack(side=LEFT)
         self.handleb = Button(bottom_frame, text="Convert", command=self.handle)
@@ -51,7 +51,7 @@ class Application(Frame):
             output = "*******"
  # use .config to change the state of the button           
         self.label.config(text=output)
-        self.QUIT.config(state = 'active')
+        self.QUIT.config(state='active')
 #        self.QUIT.pack(side=BOTTOM)
         self.QUIT.pack(side=TOP)
 root = Tk()

@@ -20,7 +20,7 @@ cursor.execute("""
 data = [('1', 'Steve Holden', 'steve@holden.com'),
         ('2', 'Steve Badly', 'steve@badly.com'),
         ('3', 'Jon Badly', 'jon@badly.com'),
-        ('4', 'Bob Bob','bob@bob.com')]
+        ('4', 'Bob Bob', 'bob@bob.com')]
 
 for id, name, email in data:
     cursor.execute("""INSERT INTO user (id, name, email)

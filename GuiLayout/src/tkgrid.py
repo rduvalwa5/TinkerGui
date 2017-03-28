@@ -16,14 +16,14 @@ class Application(Frame):
     
     def __init__(self, master=None):
         colors = colorgren()
-        Frame.__init__(self,master)
+        Frame.__init__(self, master)
         self.grid()
         for r in (1, 22, 333, 444):
-            for c in (1,22,333, 444):
-                txt = "Item{0}, {1}".format(r,c)
+            for c in (1, 22, 333, 444):
+                txt = "Item{0}, {1}".format(r, c)
                 l = Label(self, text=txt, bg=next(colors))
 #                l.grid(row=r, column=c)
-                l.grid(row=r, column=c, sticky=E+W)
+                l.grid(row=r, column=c, sticky=E + W)
 
 
                 

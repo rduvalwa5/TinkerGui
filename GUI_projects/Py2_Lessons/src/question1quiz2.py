@@ -9,11 +9,11 @@ are the elements of k and the corresponding values are the elements of v.
 >>> print dictionary
 '''
 
-v = ['one','two','three','four','five','six','seven']
-k = [1,2,3,4,5]
+v = ['one', 'two', 'three', 'four', 'five', 'six', 'seven']
+k = [1, 2, 3, 4, 5]
 
-dick = dict(zip(k,v))
-tup = zip(k,v)
+dick = dict(zip(k, v))
+tup = zip(k, v)
 for i in tup:
     print(i)
 print(dick)

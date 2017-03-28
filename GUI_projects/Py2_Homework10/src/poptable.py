@@ -6,7 +6,7 @@ Populates a table with data from a Python tuple.
 import mysql.connector
 from database import login_info
 
-if __name__ =="__main__":
+if __name__ == "__main__":
 
     db = mysql.connector.Connect(**login_info)
     cursor = db.cursor()

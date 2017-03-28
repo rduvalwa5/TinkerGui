@@ -11,10 +11,10 @@ def high_score(player, score):
         for pl in shelf.items():
             if pl[1][0] == player:
                 if int(pl[1][1]) < score:
-                    shelf[pl[0]] = (pl[1][0],score)
+                    shelf[pl[0]] = (pl[1][0], score)
                     return shelf[pl[0]][1]
                 else:
                     return shelf[pl[0]][1]
     else:
-        shelf[player] = (player,score)
+        shelf[player] = (player, score)
         return shelf[player][1]

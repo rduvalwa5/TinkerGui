@@ -6,7 +6,7 @@ first function, keywords(), iterates over the keys of the dict, printing the key
 (which are the names of the unmatched keyword arguments) and the associated values
  (which are the values following the equals signs). 
  '''
-def keywords(**kwargs): #this is an example of dict-parameter
+def keywords(**kwargs):  # this is an example of dict-parameter
     "Prints the keys and arguments passed through"
     for key in kwargs:
         print("Printing   " "{0}: {1} ".format(key, kwargs[key]))
@@ -16,5 +16,5 @@ def keywords_as_dict(**kwargs):
     return kwargs
      
 if __name__ == "__main__":
-    keywords(guido="Founder of Python", python="Used by NASA and Google",Dennis_Ritchie="Founder of C", C="Used to develop Unix")
-    print(keywords_as_dict(guido="Founder of Python", python="Used by Nasa and Google",Dennis_Ritchie ="Founder of C", C="Used to develop Unix"))
+    keywords(guido="Founder of Python", python="Used by NASA and Google", Dennis_Ritchie="Founder of C", C="Used to develop Unix")
+    print(keywords_as_dict(guido="Founder of Python", python="Used by Nasa and Google", Dennis_Ritchie="Founder of C", C="Used to develop Unix"))

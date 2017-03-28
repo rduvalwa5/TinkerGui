@@ -21,11 +21,11 @@ class row:
         return "user_record(id={0.id} name={0.name} email={0.email})".format(self)   
     
     def retrieve(self, curs, condition=None):
-        statement = "{0} {1} {2} {3};".format('select' ,", ".join(columns),' from email ', condition)
+        statement = "{0} {1} {2} {3};".format('select' , ", ".join(columns), ' from email ', condition)
         curs.execute(statement)
         return [self(*row) for row in curs.fetchall()]
          
-if __name__ == "__main__": # Simple self-test
+if __name__ == "__main__":  # Simple self-test
     columns = ['id', 'name', 'email']
  #   r1 = row(['id', 'name', 'email']
     r1 = row(columns,

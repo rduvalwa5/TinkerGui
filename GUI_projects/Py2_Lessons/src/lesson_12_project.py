@@ -26,7 +26,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
 
 
-def createMessage (address, message,lst=None):
+def createMessage (address, message, lst=None):
     if lst == None:
         msg = email.message_from_string(message)
         msg['Date'] = datetime.datetime.now().strftime("%d %b %Y %H:%M:%S -0600") 
@@ -40,7 +40,7 @@ def createMessage (address, message,lst=None):
         msg['To'] = address
         msg['Subject'] = "MIME Type Email"
         msg['From'] = 'anybody@home.com'
-        text_msg = MIMEText(message,'text')
+        text_msg = MIMEText(message, 'text')
         msg.attach(text_msg)
         for file in lst:
             if mimetypes.guess_type(file)[0].__contains__('text'):
@@ -58,15 +58,15 @@ def createMessage (address, message,lst=None):
                     print ("Error: cannot open {0}".format(file))
     return msg
 
-if __name__ ==  "__main__":
+if __name__ == "__main__":
     
     toAddress = 'ToAny@there.com'
     message = "Hi,\n   This is a test message.\nThe Sender"
     path = "./"
-    files = [os.path.join(path,'plain_text.txt'),os.path.join(path,'foot.png'),os.path.join(path,'TestHelloWorld.html'),os.path.join(path,'feet.bmp')] #,'HerMajesty.mp3']
+    files = [os.path.join(path, 'plain_text.txt'), os.path.join(path, 'foot.png'), os.path.join(path, 'TestHelloWorld.html'), os.path.join(path, 'feet.bmp')]  # ,'HerMajesty.mp3']
         
-    files = ['plain_text.txt','TestHelloWorld.html', 'foot.png']
-    msg = createMessage(toAddress,message)
+    files = ['plain_text.txt', 'TestHelloWorld.html', 'foot.png']
+    msg = createMessage(toAddress, message)
     print(msg.as_string())    
-    msg2 = createMessage(toAddress,message,files)
+    msg2 = createMessage(toAddress, message, files)
 #    print(msg2.as_string())

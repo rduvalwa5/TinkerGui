@@ -1,7 +1,7 @@
 '''  rowspan() columnspan()  '''
 from tkinter import *
 
-ALL = N+S+W+E
+ALL = N + S + W + E
 
 class Application(Frame):
     def __init__(self, master=None):

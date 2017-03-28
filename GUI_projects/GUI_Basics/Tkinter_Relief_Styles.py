@@ -3,12 +3,12 @@ import tkinter
 
 top = tkinter.Tk()
 
-B1 = tkinter.Button(top, text ="FLAT", relief=FLAT )
-B2 = tkinter.Button(top, text ="RAISED", relief=RAISED )
-B3 = tkinter.Button(top, text ="SUNKEN", relief=SUNKEN )
-B4 = tkinter.Button(top, text ="GROOVE", relief=GROOVE )
-B5 = tkinter.Button(top, text ="RIDGE", relief=RIDGE )
-B6 = tkinter.Button(top, text ="None")
+B1 = tkinter.Button(top, text="FLAT", relief=FLAT)
+B2 = tkinter.Button(top, text="RAISED", relief=RAISED)
+B3 = tkinter.Button(top, text="SUNKEN", relief=SUNKEN)
+B4 = tkinter.Button(top, text="GROOVE", relief=GROOVE)
+B5 = tkinter.Button(top, text="RIDGE", relief=RIDGE)
+B6 = tkinter.Button(top, text="None")
 
 B1.pack()
 B2.pack()

@@ -51,30 +51,30 @@ class DBTest(unittest.TestCase):
 
     def test_retrieve_2records(self):
         D = build_row("user", "id name email")
-        d = D([1,'Any One','one@one.com'])
+        d = D([1, 'Any One', 'one@one.com'])
         db = mysql.connector.Connect(**login_info)
         condition = "name like 'Steve%'"
         records = d.retrieve(db.cursor(), condition)
-        self.assertIsInstance(records,types.GeneratorType, "Not Generator")
+        self.assertIsInstance(records, types.GeneratorType, "Not Generator")
         for record in records:
-            self.assertEqual(record.name[0:5],"Steve")
+            self.assertEqual(record.name[0:5], "Steve")
 
     def test_retrieve_1record(self):
         D = build_row("user", "id name email")
-        d = D([1,'Any One','one@one.com'])
+        d = D([1, 'Any One', 'one@one.com'])
         db = mysql.connector.Connect(**login_info)
         condition = "id='2'"
         records = d.retrieve(db.cursor(), condition)
-        self.assertIsInstance(records,types.GeneratorType, "Not Generator")
+        self.assertIsInstance(records, types.GeneratorType, "Not Generator")
         for record in records:
-            self.assertEqual(record.id,2)
+            self.assertEqual(record.id, 2)
 
     def test_retrieve_no_conditions(self):
         D = build_row("user", "id name email")
-        d = D([1,'Any One','one@one.com'])
+        d = D([1, 'Any One', 'one@one.com'])
         db = mysql.connector.Connect(**login_info)
         records = d.retrieve(db.cursor())
-        self.assertIsInstance(records,types.GeneratorType, "Not Generator")
+        self.assertIsInstance(records, types.GeneratorType, "Not Generator")
         expect_Count = 4
         rec_count = 0
         for r in records:

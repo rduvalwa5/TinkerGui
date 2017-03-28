@@ -11,7 +11,7 @@ db = mysql.connector.Connect(**login_info)
 cursor = db.cursor()
 
 fmt = "{0:10} {1:6} {2:10}"
-print(fmt.format("Animal","Weight","Family"))
+print(fmt.format("Animal", "Weight", "Family"))
 print("-"*28)
 # cursor.execute("select * from animal")
 # for animal in cursor.fetchall():

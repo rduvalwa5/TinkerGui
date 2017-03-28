@@ -28,7 +28,7 @@ class DBTest(unittest.TestCase):
         YR = int(today.strftime('%Y'))
         DY = int(today.strftime('%d'))
         MNTH = int(today.strftime('%m'))
-        settings.STARTTIME = datetime(YR,MNTH,DY)
+        settings.STARTTIME = datetime(YR, MNTH, DY)
         cursor.execute("""DROP TABLE IF EXISTS daily_email""")
         cursor.execute("""
             CREATE TABLE daily_email (
@@ -55,7 +55,7 @@ class DBTest(unittest.TestCase):
         expected = settings.DAYCOUNT * len(settings.RECIPIENTS)
         cursor.execute("select count(*) from daily_email")
         actual = cursor.fetchone()[0]
-        self.assertEqual(actual,expected)    
+        self.assertEqual(actual, expected)    
 
     def test_one_recipient_stored_emails(self):
         """
@@ -67,7 +67,7 @@ class DBTest(unittest.TestCase):
         statement = "select count(*) from daily_email where msgRecipientAddress like '" + recipientList[0][1] + "';"
         cursor.execute(statement)
         actual = cursor.fetchone()[0]
-        self.assertEqual(actual,expected)  
+        self.assertEqual(actual, expected)  
     
     def test_first_send_date(self):
         """
@@ -102,7 +102,7 @@ class DBTest(unittest.TestCase):
         for message in emailMessages:
             if not emailRecipients.__contains__(message.get('To')):
                 emailRecipients.append(message.get('To'))
-        self.assertEqual(len(emailRecipients),len(settings.RECIPIENTS))   
+        self.assertEqual(len(emailRecipients), len(settings.RECIPIENTS))   
 
 if __name__ == "__main__":
     unittest.main()
