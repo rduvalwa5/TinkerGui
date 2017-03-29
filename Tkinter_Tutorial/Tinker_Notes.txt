@@ -5,7 +5,7 @@ Tkinter Programming
 Tkinter is the standard GUI library for Python. Python when combined with Tkinter provides a fast and easy way 
 to create GUI applications. Tkinter provides a powerful object-oriented interface to the Tk GUI toolkit.
 
-Creating a GUI application using Tkinter is an easy task. All you need to do is perform the following steps −
+Creating a GUI application using Tkinter is an easy task. All you need to do is perform the following steps âˆ’
 
 	- Import the Tkinter module.
 	- Create the GUI application main window.
@@ -24,7 +24,7 @@ Example
 	
 Tkinter Widgets
 	There are currently 15 types of widgets in Tkinter. We present these widgets as well as a brief description 
-	in the following table −
+	in the following table âˆ’
 
 	Operator		Description
 	Button			The Button widget is used to display buttons in your application.
@@ -98,7 +98,7 @@ Python Tkinter Button
 	when you click the button.
 		
 	Syntax
-	Here is the simple syntax to create this widget −
+	Here is the simple syntax to create this widget âˆ’
 
 		w = Button ( master, option=value, ... )
 
@@ -134,7 +134,7 @@ Python Tkinter Button
 	wraplength			If this value is set to a positive number, the text lines will be wrapped to fit 
 						within this length.
 
-	Methods		Following are commonly used methods for this widget −
+	Methods		Following are commonly used methods for this widget âˆ’
 	Method			Description
 	flash()		Causes the button to flash several times between active and normal colors. 
 				Leaves the button in the state it was in originally. Ignored if the button is disabled.
@@ -148,7 +148,7 @@ Python Tkinter Canvas
 	You can place graphics, text, widgets or frames on a Canvas.
 
 	Syntax
-	Here is the simple syntax to create this widget −
+	Here is the simple syntax to create this widget âˆ’
 
  	w = Canvas ( master, option=value, ... )
 
@@ -212,7 +212,7 @@ Python Tkinter Checkbutton
 	You can also display images in place of text.
 
 	Syntax
-	Here is the simple syntax to create this widget −
+	Here is the simple syntax to create this widget âˆ’
 
 	w = Checkbutton ( master, option, ... )
 
@@ -267,7 +267,7 @@ Python Tkinter Checkbutton
 						and all lines will be broken into pieces no longer than that number.
 
 	Methods
-	Following are commonly used methods for this widget −
+	Following are commonly used methods for this widget âˆ’
 
 	Medthod				Description
 	deselect()			Clears (turns off) the checkbutton.
@@ -288,7 +288,7 @@ Python Tkinter Entry
 	  then you should use the Label widget.
 
 	Syntax
-	Here is the simple syntax to create this widget −
+	Here is the simple syntax to create this widget âˆ’
 
 	w = Entry( master, option, ... )
 
@@ -329,7 +329,7 @@ Python Tkinter Entry
 						entry widget to a scrollbar.
 
 	Methods
-		Following are commonly used methods for this widget −
+		Following are commonly used methods for this widget âˆ’
 
 	Medthod						Description
 	delete (first,last=None)	Deletes characters from the widget, starting with the one at index first, up to but not including 
@@ -361,7 +361,7 @@ Python Tkinter Frame
 	  A frame can also be used as a foundation class to implement complex widgets.
 
 	Syntax
-		Here is the simple syntax to create this widget −
+		Here is the simple syntax to create this widget âˆ’
 
  		w = Frame ( master, option, ... )
 
@@ -396,7 +396,7 @@ Python Tkinter Label
 	  and span the text across multiple lines.
 
 	Syntax
-	Here is the simple syntax to create this widget −
+	Here is the simple syntax to create this widget âˆ’
 
 	w = Label ( master, option, ... )
 
@@ -435,3 +435,74 @@ Python Tkinter Label
 					contents.
 	wraplength		You can limit the number of characters in each line by setting this option to the desired number. The default 
 					value, 0, means that lines will be broken only at newlines.
+
+*********************************************************************************************************
+Python Tkinter Scrollbar
+	This widget provides a slide controller that is used to implement vertical scrolled widgets, 
+	such as Listbox, Text and Canvas. Note that you can also create horizontal scrollbars on 
+	Entry widgets.
+
+	Syntax
+			w = Scrollbar ( master, option, ... )
+
+	Parameters
+		master: This represents the parent window.
+
+		options:
+		These options can be used as key-value pairs separated by commas.
+
+		Option				Description
+
+		activebackground	The color of the slider and arrowheads when the mouse is over them.
+
+		bg					The color of the slider and arrowheads when the mouse is not over them.
+
+		bd					The width of the 3-d borders around the entire perimeter of the trough, 
+							and also the width of the 3-d effects on the arrowheads and slider. 
+							Default is no border around the trough, and a 2-pixel border around the arrowheads 
+							and slider.
+		command				A procedure to be called whenever the scrollbar is moved.
+
+		cursor				The cursor that appears when the mouse is over the scrollbar.
+
+		elementborderwidth	The width of the borders around the arrowheads and slider. The default is elementborderwidth=-1, which means to use the value of the borderwidth option.
+
+		highlightbackground	The color of the focus highlight when the scrollbar does not have focus.
+
+		highlightcolor		The color of the focus highlight when the scrollbar has the focus.
+
+		highlightthickness	The thickness of the focus highlight. Default is 1. Set to 0 to suppress display of the focus highlight.
+
+		jump				This option controls what happens when a user drags the slider. Normally (jump=0),
+							every small drag of the slider causes the command callback to be called. If you set 
+							this option to 1, the callback isn't called until the user releases the mouse button.
+
+		orient				Set orient=HORIZONTAL for a horizontal scrollbar, orient=VERTICAL for a vertical one.
+		
+		repeatdelay			This option controls how long button 1 has to be held down in the trough before the 
+							slider starts moving in that direction repeatedly. 
+							Default is repeatdelay=300, and the units are milliseconds.
+
+		repeatinterval		repeatinterval
+		
+		takefocus			Normally, you can tab the focus through a scrollbar widget. Set takefocus=0 if you
+							don't want this behavior.
+
+		troughcolor			The color of the trough.
+
+		width				Width of the scrollbar (its y dimension if horizontal, and its x dimension if vertical). Default is 16.
+
+		Methods
+		Scrollbar objects have these methods −
+
+		Methods				Description
+		get()				Returns two numbers (a, b) describing the current position of the slider. 
+							The a value gives the position of the left or top edge of the slider, for horizontal
+							and vertical scrollbars respectively; the b value gives the position of the right or 
+							bottom edge.
+
+		set( first, last )	To connect a scrollbar to another widget w, set w's xscrollcommand or yscrollcommand 
+							to the scrollbar's set() method. The arguments have the same meaning as the values 
+							returned by the get() method.					
+					
+*********************************************************************************************************					
