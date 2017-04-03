@@ -465,7 +465,8 @@ Python Tkinter Scrollbar
 
 		cursor				The cursor that appears when the mouse is over the scrollbar.
 
-		elementborderwidth	The width of the borders around the arrowheads and slider. The default is elementborderwidth=-1, which means to use the value of the borderwidth option.
+		elementborderwidth	The width of the borders around the arrowheads and slider. The default is elementborderwidth=-1,
+							 which means to use the value of the borderwidth option.
 
 		highlightbackground	The color of the focus highlight when the scrollbar does not have focus.
 
