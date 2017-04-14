@@ -43,14 +43,8 @@ class Application(Frame):
             myButtonTxt = ['Red', 'Blue', 'Green', 'Black', 'Open']
             myButtonCmd = [makeRed, makeBlue, makeGreen, makeBlack, openHandler]
             Button(self, text=myButtonTxt[c - 1].format(c), command=myButtonCmd[c - 1]).grid(row=14, column=c, sticky=E + W)
-        frame1 = Frame(self, bg="red")
-        frame1.grid(row=0, column=1, rowspan=7, columnspan=2, sticky=N + S + W + E)
-        frame1.bind("<Button-1>", frame1ClickHandler)
-        frame2 = Frame(self, bg="blue")
-        frame2.grid(row=7, column=1, rowspan=7, columnspan=2, sticky=N + S + W + E) 
-        frame2.bind("<Button-1>", frame2ClickHandler)
         frame3 = Frame(self) 
-        frame3.grid(row=0, column=3, rowspan=14, columnspan=3, sticky=N + S + W + E)
+        frame3.grid(row=0, column=0, rowspan=14, columnspan=3, sticky=N + S + W + E)
         entryText = "Input File Name"
         self.text_in = Entry(frame3)
         self.text_in.config(fg="black")
